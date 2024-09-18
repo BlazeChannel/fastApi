@@ -1,16 +1,30 @@
-from pydantic import BaseModel
-#ST9 
+from pydantic import BaseModel, Field
+from typing import List, Optional
+from datetime import datetime
+# ST9
+
+
 class BlogModel(BaseModel):
-    _id : str
-    title : str
+    title: str
     subtitle: str
-    content : str
+    content: str
     author: str
-    tags: list
+    tags: Optional[List[str]] = []
+    date: Optional[datetime] = datetime.now()
+    comments: Optional[List[dict]] = []
+
 
 class UpdateBlogModel(BaseModel):
-    title : str =None
-    subtitle: str = None 
-    content : str = None
+    title: str = None
+    subtitle: str = None
+    content: str = None
     author: str = None
     tags: list = None
+    comments : list =None
+
+
+class CommentModel(BaseModel):
+    comment_id: str
+    content: str
+    author: str
+    date: Optional[datetime] = datetime.now()

@@ -11,6 +11,7 @@ client = MongoClient(uri, server_api=ServerApi('1'))
 db = client.Blogging
 # create a collection = name of your collection (blogs)
 blogs_collection = db["blogs"]
+comments_collection = db["comments"]
 # Send a ping to confirm a successful connection
 try:
     client.admin.command('ping')
@@ -20,23 +21,21 @@ except Exception as e:
 
 
 
-
-
-#.\venv\scripts\activate
+# .\venv\scripts\activate
 # uvicorn main:app --reload
 
-#GET REQUEST is used to retrieve data from the server
-#POST REQUEST is used to post/creating/save a new blog to our server/database
-#PATCH REQUEST is used to update an existing request on the database
-#DELETE REQEUST is used to delete data from our database
+# GET REQUEST is used to retrieve data from the server
+# POST REQUEST is used to post/creating/save a new blog to our server/database
+# PATCH REQUEST is used to update an existing request on the database
+# DELETE REQEUST is used to delete data from our database
 # create a folder "python blogging backend", open with cmd prompt, install "pip install virtualenv" then press enter. To create a virtual environment type"virtualenv venv(name your virtual environment) then press enter
 # Activate to be able to use ".\venv(name you give your environment)\scripts\activate" then pres enter
 # Install some dependencies "pip install fastapi uvicorn" . Later install "pip install pymongo"
-# create your structure FOLDER : "config > config.py" "routes" "models" "serializers" 
+# create your structure FOLDER : "config > config.py" "routes" "models" "serializers"
 # on your MONGODb acct create a cluster, name it and user password also. Go to driver set  your driver & version . Paste number 2 on your cmd prompt . Copy number 3 on your config.py file , chaange the pasword to the pasword you set on the mongoDB auth user you created
-#RUN YOUR CONFIG FILE WITH EXTENSION code runner, check your terminal
+# RUN YOUR CONFIG FILE WITH EXTENSION code runner, check your terminal
 # if you close you and reopen and activate with ".\venv(name you give your environment)\scripts\activate"
-# create your entry point(main.py) before you run your server 
+# create your entry point(main.py) before you run your server
 # create entry.py . After ST7 comd promt (uvicorn main:app --reload)
 # ST8 post new blog to our database. create blog in MODEL folder
 # ST9 create blog.py in ROUTES folder
